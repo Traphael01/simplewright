@@ -1,100 +1,170 @@
-# simplewright
-a simple software for writing thats ignore all useless feature of modern text editor
-UniversalWriter - Multi-Page Advanced Text Editor
+# SimpleWright
 
-UniversalWriter (conosciuto internamente come simplewright) è un editor di testo multi-pagina avanzato sviluppato in Python utilizzando l'interfaccia grafica Tkinter. L'applicazione unisce la semplicità di un blocco note a potenti funzionalità di desktop publishing, inclusa la gestione nativa dei layout dei fogli (A4, A3, A2), l'importazione avanzata di documenti Microsoft Word (.docx), la lettura di PDF con motore OCR Tesseract integrato per scansionare fogli grafici non editabili, e un sistema integrato di stampa/esportazione.
-1 Funzionalità Principali
+**Un editor di testo minimalista e potente. Niente fronzoli, solo quello che serve.**
 
-    Gestione Multi-Pagina Reale: Possibilità di aggiungere, scambiare, navigare ed eliminare singoli fogli all'interno dello stesso documento tramite una comoda barra laterale.
+---
 
-    Layout di Pagina Professionale: Supporto ai formati standard (A4, A3, A2) sia in orientamento verticale che orizzontale, con righelli interattivi per regolare al volo i margini sinistro, destro, superiore e inferiore.
+## Cos'è SimpleWright?
 
-    Importazione Estesa & OCR:
+SimpleWright è un editor di testo multi-pagina sviluppato in Python con una filosofia semplice: fornisce le funzionalità essenziali di un word processor professionale senza distrazioni inutili.
 
-        Lettura fluida di file di testo semplici (.txt) e documenti Word (.docx).
+Perfetto per chi vuole:
+- Scrivere documenti senza compromessi
+- Gestire più pagine in un unico file
+- Lavorare con PDF e documenti Word
+- Esportare in PDF con qualità professionale
 
-        Estrazione del testo da documenti PDF. Se una pagina contiene un'immagine o una scansione non editabile, interviene automaticamente il motore Tesseract OCR in lingua italiana per recuperare il testo leggibile.
+---
 
-    Formattazione Ricca: Modifica della famiglia del font, della dimensione, stili applicabili al testo selezionato (Grassetto, Corsivo, Sottolineato) e giustificazione (Sinistra, Centro, Destra).
+## Funzionalità
 
-    Tavolozza Colori Dinamica: Selezione avanzata del colore del testo e dell'evidenziatore tramite una griglia popup di campioni, con memorizzazione degli slot usati di recente.
+### Gestione Multi-Pagina
+- Aggiungi, riordina, elimina pagine con facilità
+- Navigazione tramite barra laterale intuitiva
+- Ogni pagina mantenuta indipendentemente nel documento
 
-    Zoom Dinamico: Slider integrato per scalare visivamente il foglio sulla scrivania digitale dal 50% al 200%.
+### Layout Professionale
+- Formati standard supportati: **A4, A3, A2**
+- Orientamento verticale e orizzontale
+- Righelli interattivi per margini (sinistro, destro, superiore, inferiore)
 
-    Esportazione & Stampa PDF: Generazione di report grafici professionali accodando i fogli tramite la libreria ReportLab.
+### Importazione Intelligente
+- **File di testo** (.txt) - importazione diretta
+- **Documenti Word** (.docx) - lettura fluida con preservazione del testo
+- **PDF** - estrazione testo + OCR integrato
+  - Se il PDF contiene scansioni, **Tesseract OCR** (italiano) le legge automaticamente
+  - Nessun tool esterno da configurare
 
-    Salvataggio della Configurazione: Rilevamento automatico del sistema operativo e salvataggio delle preferenze utente (come la Dark Mode del desktop) in cartelle dedicate (AppData/LocalLow su Windows, .simplewright su Linux).
+### Formattazione
+- **Font**: cambio famiglia e dimensione
+- **Stili**: Grassetto, Corsivo, Sottolineato
+- **Allineamento**: Sinistra, Centro, Destra
+- **Colori**: tavolozza dinamica con memoria degli ultimi colori usati
 
-2 Installazione su Windows
+### Zoom Dinamico
+- Slider dal **50% al 200%** per adattare la visualizzazione alle tue preferenze
 
-Il programma viene distribuito per Windows sotto forma di un unico file eseguibile standalone (.exe) compilato tramite PyInstaller.
-Download & Avvio rapido
+### Esportazione & Stampa
+- Stampa diretta su stampante
+- Esportazione PDF con qualità grafica professionale (ReportLab)
 
-    Scarica il file simplewright.exe dalla sezione Releases di questo repository GitHub.
+### Configurazione Cross-Platform
+- Salvataggio automatico delle preferenze
+- **Windows**: `AppData/LocalLow/simplewright/`
+- **Linux**: `~/.simplewright/`
 
-    Fai doppio clic sul file per avviare l'applicazione. Non è richiesta alcuna installazione o dipendenza software esterna.
+---
 
-3 Installazione su Linux (Debian / Ubuntu e derivate)
+## Installazione
 
-Su Linux l'applicazione viene installata nativamente a livello di sistema come pacchetto .deb, includendo l'icona e l'integrazione nel menu delle applicazioni sotto la categoria Ufficio.
-Requisiti di sistema preliminari
+### Windows
 
-Il motore OCR richiede i componenti di sistema per la lettura dei caratteri. Assicurati che il tuo sistema abbia tesseract-ocr installato:
-Bash
+1. Scarica `simplewright.exe` dalle [Releases](https://github.com/Traphael01/simplewright/releases)
+2. Fai doppio clic per avviare
+3. **Niente dipendenze, niente configurazione**
 
+### Linux (Debian/Ubuntu e derivate)
+
+#### Prerequisiti: Installa OCR
+```bash
 sudo apt update
 sudo apt install tesseract-ocr tesseract-ocr-ita
+```
 
-Metodo 1: Installazione Standard del pacchetto .deb
-
-Scarica il file simplewright_1.0-1.deb dalle Releases di GitHub, apri il terminale nella cartella di download e digita:
-Bash
-
+#### Metodo 1: Pacchetto .deb (Consigliato)
+```bash
 sudo apt install ./simplewright_1.0-1.deb
+```
 
-Nota: L'uso di apt install (rispetto a dpkg -i) garantisce che l'ambiente installi in automatico le dipendenze base mancanti (come python3-tk).
-Metodo 2: Installazione Rapida "Stile Hacker" (Via Terminale)
+#### Metodo 2: Installazione Automatica (One-liner)
+```bash
+curl -s https://api.github.com/repos/TUO-USERNAME/REPO/releases/latest | grep "browser_download_url.*deb" | cut -d '"' -f 4 | wget -qi - && sudo apt install ./simplewright_1.0-1.deb && rm simplewright_1.0-1.deb
+```
 
-Se non vuoi scaricare manualmente il file dal browser, puoi copiare e incollare questo singolo comando nel terminale per fare in modo che si connetta alle API di GitHub, scarichi l'ultima release, la installi e ripulisca la cartella:
-Bash
+---
 
-curl -s https://api.github.com/repos/TUO-USERNAME/NOME-REPO/releases/latest | grep "browser_download_url.*deb" | cut -d '"' -f 4 | wget -qi - && sudo apt install ./simplewright_1.0-1.deb && rm simplewright_1.0-1.deb
+## Disinstallazione (Linux)
 
-4 Disinstallazione su Linux
-
-Se desideri rimuovere completamente il programma dal tuo computer Linux, puoi utilizzare i gestori di pacchetti standard di sistema.
-
-Rimuovi l'applicazione preservando i file di configurazione locali:
-Bash
-
+### Rimuovi mantenendo configurazione
+```bash
 sudo apt remove simplewright
+```
 
-Rimuovi completamente l'applicazione, i file di configurazione globali e i collegamenti di sistema (Consigliato):
-Bash
-
+### Rimuovi completamente tutto
+```bash
 sudo apt purge simplewright
-
-Dopo la rimozione, esegui questo comando per aggiornare la cache del menu delle applicazioni ed eliminare eventuali icone residue:
-Bash
-
 sudo update-desktop-database
+```
 
-5 Scorciatoie da Tastiera Nazionali (Shortcuts)
+---
 
-L'applicazione supporta le seguenti scorciatoie rapide per velocizzare i flussi di lavoro:
+## Scorciatoie Tastiera
 
-    Ctrl + N: Crea un nuovo documento
+| Azione | Shortcut |
+|--------|----------|
+| Nuovo documento | `Ctrl + N` |
+| Apri documento | `Ctrl + O` |
+| Salva | `Ctrl + S` |
+| Stampa / Esporta PDF | `Ctrl + P` |
+| Seleziona tutto | `Ctrl + A` |
+| Annulla (Undo) | `Ctrl + Z` |
+| Ripeti (Redo) | `Ctrl + Alt + X` |
+| Esci | `Ctrl + Q` |
 
-    Ctrl + O: Apri un documento esistente (.txt, .docx, .pdf, .odt)
+---
 
-    Ctrl + S: Salva il file corrente
+## Formati Supportati
 
-    Ctrl + P: Invia il documento alla stampante o esportalo in PDF
+**Lettura:**
+- `.txt` - Testo semplice
+- `.docx` - Microsoft Word
+- `.pdf` - Portable Document Format (con OCR per scansioni)
+- `.odt` - OpenDocument Text
 
-    Ctrl + A: Seleziona tutto il testo presente nella pagina
+**Esportazione:**
+- `.txt` - Testo semplice
+- `.pdf` - Alta qualità grafica
 
-    Ctrl + Z: Annulla l'ultima modifica (Undo)
+---
 
-    Ctrl + Alt + X: Ripristina l'azione annullata (Redo)
+## Tech Stack
 
-    Ctrl + Q: Chiudi ed esci dall'applicazione
+- **Linguaggio**: Python 3
+- **GUI**: Tkinter (built-in, zero dipendenze per Windows)
+- **OCR**: Tesseract
+- **PDF**: ReportLab (esportazione), PyPDF2/pdfplumber (lettura)
+
+---
+
+## Filosofia
+
+SimpleWright segue la filosofia Unix: **fai bene una cosa**.
+
+Non troverai:
+- Animazioni inutili
+- Cloud sync forzato
+- Pubblicità
+- Tracciamento
+
+Troverai:
+- Stabilità
+- Velocità
+- Semplicità
+- Controllo totale
+
+---
+
+## Licenza
+
+[Specifica la tua licenza qui - MIT, GPL, etc.]
+
+---
+
+## Feedback & Bug Report
+
+Trovato un bug? Vuoi suggerire una feature?
+→ Apri un [Issue su GitHub](https://github.com/Traphael01/simplewright/issues)
+
+---
+
+**SimpleWright**: *Scrivi senza distrazioni.*

@@ -81,7 +81,8 @@ sudo apt install ./simplewright_1.0-1.deb
 curl -s https://api.github.com/repos/TUO-USERNAME/REPO/releases/latest | grep "browser_download_url.*deb" | cut -d '"' -f 4 | wget -qi - && sudo apt install ./simplewright_1.0-1.deb && rm simplewright_1.0-1.deb
 ```
 #BIG DISCLAMER
-INSTALL Tesseract OCR FROM https://tesseractocr.org/#install
+---
+ INSTALL Tesseract OCR FROM https://tesseractocr.org/#install
 ---
 
 ## Disinstallazione (Linux)

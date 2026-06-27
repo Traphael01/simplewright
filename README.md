@@ -158,7 +158,7 @@ Troverai:
 
 ## Licenza
 
-[Specifica la tua licenza qui - MIT, GPL, etc.]
+[ GPL 2.0 ]
 
 ---
 

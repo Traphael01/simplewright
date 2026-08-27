@@ -60,16 +60,10 @@ Perfetto per chi vuole:
 ### Windows
 
 1. Scarica `simplewright.exe` dalle [Releases](https://github.com/Traphael01/simplewright/releases)
-2. Fai doppio clic per avviare
-3. **Niente dipendenze, niente configurazione**
+2. Fai doppio clic per avviare l'installer
+
 
 ### Linux (Debian/Ubuntu e derivate)
-
-#### Prerequisiti: Installa OCR
-```bash
-sudo apt update
-sudo apt install tesseract-ocr tesseract-ocr-ita
-```
 
 #### Metodo 1: Pacchetto .deb (Consigliato)
 ```bash
@@ -80,10 +74,6 @@ sudo apt install ./simplewright_1.0-1.deb
 ```bash
 curl -s https://github.com/Traphael01/simplewright/releases/latest | grep "browser_download_url.*deb" | cut -d '"' -f 4 | wget -qi - && sudo apt install ./simplewright_1.0-1.deb && rm simplewright_1.0-1.deb
 ```
-#BIG DISCLAMER
----
- INSTALL Tesseract OCR FROM https://tesseractocr.org/#install
----
 
 ## Disinstallazione (Linux)
 
@@ -126,6 +116,7 @@ sudo update-desktop-database
 **Esportazione:**
 - `.txt` - Testo semplice
 - `.pdf` - Alta qualità grafica
+- `.docx` - Microsoft Word
 
 ---
 

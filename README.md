@@ -1,57 +1,75 @@
-# SimpleWright
+Certo. Ecco il contenuto pronto da salvare come **`README.md`**:
 
-**Un editor di testo minimalista e potente. Niente fronzoli, solo quello che serve.**
+:::writing{variant="document" id="58321" title="README.md"}
+
+# Simplewright
+
+**Un editor di testo e visualizzatore di documenti multi-pagina, flessibile e potente. Niente distrazioni, solo quello che serve.**
 
 ---
 
-## Cos'è SimpleWright?
+## Cos'è Simplewright?
 
-SimpleWright è un editor di testo multi-pagina sviluppato in Python con una filosofia semplice: fornisce le funzionalità essenziali di un word processor professionale senza distrazioni inutili.
+Simplewright è un editor di testo e visualizzatore di documenti sviluppato in Python con una filosofia chiara: fornire un ambiente di scrittura e lettura completo, supportando un'ampia varietà di formati senza appesantire l'esperienza d'uso.
 
 Perfetto per chi vuole:
-- Scrivere documenti senza compromessi
-- Gestire più pagine in un unico file
-- Lavorare con PDF e documenti Word
-- Esportare in PDF con qualità professionale
+
+- Scrivere documenti mantenendo il controllo completo sul layout e la formattazione
+- Lavorare su più pagine o slide in un unico ambiente
+- Aprire ed esportare documenti Word, PDF, RTF, presentazioni e e-book
+- Modificare o aggiungere caselle di testo ricche e immagini sul foglio
 
 ---
 
-## Funzionalità
+## Funzionalità principali
 
-### Gestione Multi-Pagina
-- Aggiungi, riordina, elimina pagine con facilità
-- Navigazione tramite barra laterale intuitiva
-- Ogni pagina mantenuta indipendentemente nel documento
+### Gestione Multi-Pagina & Layout
 
-### Layout Professionale
-- Formati standard supportati: **A4, A3, A2**
-- Orientamento verticale e orizzontale
-- Righelli interattivi per margini (sinistro, destro, superiore, inferiore)
+- **Aggiunta, riordino e rinominazione**: Gestisci e rinomina le pagine direttamente dalla barra laterale intuitiva.
+- **Paginazione automatica intelligente**: Il testo fluisce automaticamente alla pagina successiva quando supera i margini inferiori.
+- **Formati e orientamento**: Supporto standard per **A4, A3, A2** con orientamento sia Verticale che Orizzontale.
+- **Margini e righelli interattivi**: Regolazione dinamica dei margini superiore, inferiore, sinistro e destro.
+- **Zoom fluido**: Controllo dello zoom dal 50% al 200% con supporto per lo scroll orizzontale e verticale.
 
-### Importazione Intelligente
-- **File di testo** (.txt) - importazione diretta
-- **Documenti Word** (.docx) - lettura fluida con preservazione del testo
-- **PDF** - estrazione testo + OCR integrato
-  - Se il PDF contiene scansioni, **Tesseract OCR** (italiano) le legge automaticamente
-  - Nessun tool esterno da configurare
+### Importazione & Lettura Avanzata
 
-### Formattazione
-- **Font**: cambio famiglia e dimensione
-- **Stili**: Grassetto, Corsivo, Sottolineato
-- **Allineamento**: Sinistra, Centro, Destra
-- **Colori**: tavolozza dinamica con memoria degli ultimi colori usati
+- **Documenti Word moderni e legacy**: Lettura nativa di file `.docx` e supporto avanzato per i vecchi file `.doc` (Word 97-2003).
+- **Documenti PDF**: Rendering visuale pagina per pagina con mantenimento del layout originale.
+- **Presentazioni PowerPoint (****`.pptx`****)**: Caricamento di slide con sfondi, immagini e testo riposizionabile.
+- **E-book (****`.epub`****) e OpenDocument (****`.odt`****,****`.ods`****)**: Estrazione pulita dei capitoli e lettura diretta dei dati.
+- **Rich Text (****`.rtf`****)**: Parsing di stili, font, colori e allineamenti direttamente dai tag RTF.
+- **Markdown (****`.md`****) e Testo (****`.txt`****)**: Formattazione visiva automatica per Markdown e rilevamento intelligente dell'encoding (UTF-8, CP1252, Latin-1).
 
-### Zoom Dinamico
-- Slider dal **50% al 200%** per adattare la visualizzazione alle tue preferenze
+### Formattazione & Elementi Grafici
+
+- **Gestione Font**: Scelta della famiglia di caratteri di sistema e dimensione del testo.
+- **Stili di testo**: Grassetto, Corsivo, Sottolineato e Allineamento (Sinistra, Centro, Destra).
+- **Colori e Evidenziatore**: Tavolozza dei colori recenti e supporto per lo sfondo del testo.
+- **Caselle di testo ricche (Rich Text Box)**: Inserisci e posiziona liberamente caselle di testo mobili con formattazione mista nello stesso blocco.
+- **Immagini e GIF animate**: Inserimento, posizionamento e ridimensionamento proporzionale delle immagini, con riproduzione continua per le GIF.
+- **Link automatici**: Riconoscimento degli URL e apertura diretta nel browser tramite `Ctrl + Clic`.
 
 ### Esportazione & Stampa
-- Stampa diretta su stampante
-- Esportazione PDF con qualità grafica professionale (ReportLab)
 
-### Configurazione Cross-Platform
-- Salvataggio automatico delle preferenze
-- **Windows**: `AppData/LocalLow/simplewright/`
-- **Linux**: `~/.simplewright/`
+- **Esportazione PDF**: Generazione di documenti PDF ad alta qualità tramite ReportLab o struttura vettoriale nativa.
+- **Esportazione Word & RTF**: Salvataggio in formato `.docx` ed `.rtf` con preservazione degli stili e della formattazione.
+- **Esportazione Testo**: Salvataggio in formato `.txt` pulito o `.md`.
+- **Stampa di sistema**: Invio diretto del lavoro alla stampante predefinita.
+
+---
+
+## Formati Supportati
+
+| Formato | Lettura | Esportazione |
+| --- | --- | --- |
+| **PDF** (`.pdf`) | Sì (Visuale / PyMuPDF) | Sì |
+| **Word** (`.docx`, `.doc`) | Sì (Nativo / Converter) | Sì (`.docx`) |
+| **Rich Text** (`.rtf`) | Sì (Con formattazione) | Sì |
+| **OpenDocument** (`.odt`, `.ods`) | Sì | Sì (via conversione) |
+| **Presentazioni** (`.pptx`) | Sì | Sì (via PDF) |
+| **E-book** (`.epub`) | Sì | Sì (via TXT/PDF) |
+| **Markdown** (`.md`) | Sì (Stili visivi) | Sì |
+| **Testo semplice** (`.txt`) | Sì | Sì |
 
 ---
 
@@ -59,45 +77,62 @@ Perfetto per chi vuole:
 
 ### Windows
 
-1. Scarica `simplewright.exe` dalle [Releases](https://github.com/Traphael01/simplewright/releases)
-2. Fai doppio clic per avviare l'installer
-
+1. Scarica l'installer `Simplewright_Setup.exe` dalla sezione [Releases su GitHub](<https://github.com/Traphael01/simplewright/releases>).
+2. Esegui la procedura guidata di installazione ed avvia l'applicazione dal collegamento sul Desktop o nel Menu Start.
 
 ### Linux (Debian/Ubuntu e derivate)
 
-#### Metodo 1: Pacchetto .deb (Consigliato)
-```bash
-sudo apt install ./simplewright_1.0-1.deb
+#### Metodo 1: Pacchetto `.deb` (Consigliato)
+
+Scarica il file `.deb` dalle Releases ed eseguilo da terminale:
+
+```
+sudo apt install ./simplewright_2.0-1.deb
 ```
 
 #### Metodo 2: Installazione Automatica (One-liner)
-```bash
-curl -s https://github.com/Traphael01/simplewright/releases/latest | grep "browser_download_url.*deb" | cut -d '"' -f 4 | wget -qi - && sudo apt install ./simplewright_1.0-1.deb && rm simplewright_1.0-1.deb
+
 ```
+curl -s https://api.github.com/repos/Traphael01/simplewright/releases/latest | grep "browser_download_url.*deb" | cut -d '"' -f 4 | wget -qi - && sudo apt install ./simplewright*.deb && rm simplewright*.deb
+```
+
+---
 
 ## Disinstallazione (Linux)
 
-### Rimuovi mantenendo configurazione
-```bash
+### Rimuovi l'applicazione mantenendo la configurazione
+
+```
 sudo apt remove simplewright
 ```
 
-### Rimuovi completamente tutto
-```bash
+### Rimuovi completamente l'applicazione e le preferenze
+
+```
 sudo apt purge simplewright
 sudo update-desktop-database
 ```
 
 ---
 
-## Scorciatoie Tastiera
+## Nota importante sulla Stampa
 
-| Azione | Shortcut |
-|--------|----------|
+Se la stampa diretta dall'applicazione non dovesse avviarsi o dovesse riscontrare problemi di comunicazione con la stampante di sistema:
+
+1. Salva prima il documento come file **PDF** (`Ctrl + Shift + S` oppure dal menu _File \> Salva con nome..._).
+2. Apri ed esegui la stampa del file PDF generato utilizzando un'applicazione dedicata (es. _Adobe Acrobat_, _Acrobat Reader_, _Microsoft Edge_ o il visualizzatore PDF predefinito del sistema operativo).
+
+---
+
+## Scorciatoie da Tastiera
+
+| Azione | Scorciatoia |
+| --- | --- |
 | Nuovo documento | `Ctrl + N` |
 | Apri documento | `Ctrl + O` |
 | Salva | `Ctrl + S` |
-| Stampa / Esporta PDF | `Ctrl + P` |
+| Salva con nome | `Ctrl + Shift + S` |
+| Stampa / Esporta | `Ctrl + P` |
 | Seleziona tutto | `Ctrl + A` |
 | Annulla (Undo) | `Ctrl + Z` |
 | Ripeti (Redo) | `Ctrl + Alt + X` |
@@ -105,29 +140,28 @@ sudo update-desktop-database
 
 ---
 
-## Formati Supportati
-
-**Lettura:**
-- `.txt` - Testo semplice
-- `.docx` - Microsoft Word
-- `.pdf` - Portable Document Format (con OCR per scansioni)
-- `.odt` - OpenDocument Text
-
-**Esportazione:**
-- `.txt` - Testo semplice
-- `.pdf` - Alta qualità grafica
-- `.docx` - Microsoft Word
-
----
-
 ## Tech Stack
 
 - **Linguaggio**: Python 3
-- **GUI**: Tkinter (built-in, zero dipendenze per Windows)
-- **OCR**: Tesseract
-- **PDF**: ReportLab (esportazione), PyPDF2/pdfplumber (lettura)
+- **GUI**: Tkinter (built-in)
+- **PDF & Vector Engine**: PyMuPDF (`pymupdf`), ReportLab
+- **Documenti & Presentazioni**: `python-docx`, `python-pptx`
+- **Gestione Immagini**: Pillow (`PIL`)
+- **Parsing OLE2**: `olefile`
 
 ---
+
+## Licenza
+
+Distribuito sotto licenza **GPL 2.0**.
+
+---
+
+## Feedback & Bug Report
+
+Hai riscontrato un problema o vuoi proporre una nuova funzionalità?
+
+→ Apri una [Issue su GitHub](<https://github.com/Traphael01/simplewright/issues>) :::
 
 ## Filosofia
 

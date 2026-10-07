@@ -1,0 +1,7 @@
+pymupdf
+python-docx
+python-pptx
+docx2pdf
+reportlab
+Pillow
+olefile
